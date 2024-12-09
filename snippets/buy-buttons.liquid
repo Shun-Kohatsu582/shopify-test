@@ -93,6 +93,15 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+          <script>
+            document.querySelectorAll("fieldset.product-form__input input").forEach((input) => {
+              input.addEventListener('click', () => {
+                let size_text = "これは" + input.value + "サイズです。";
+                document.querySelector(".size_text").innerHTML = size_text;
+              });
+            })
+          </script>
+          <p class="size_text">{{ product.selected_variant.metafields.custom.size }}</p>
           {%- if product.selected_or_first_available_variant.inventory_quantity >= 5 -%}
           <p>Available!</p>
           {%- elsif product.selected_or_first_available_variant.inventory_quantity < 5 -%}
