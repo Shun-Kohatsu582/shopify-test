@@ -101,7 +101,7 @@
               });
             })
           </script>
-          <p class="size_text">{{ product.selected_variant.metafields.custom.size }}</p>
+          <p class="size_text">{{ product.selected_or_first_available_variant.metafields.custom.size }}</p>
           {%- if product.selected_or_first_available_variant.inventory_quantity >= 5 -%}
           <p>Available!</p>
           {%- elsif product.selected_or_first_available_variant.inventory_quantity < 5 -%}
